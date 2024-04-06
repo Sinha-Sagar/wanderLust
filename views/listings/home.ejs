@@ -1,0 +1,31 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <h1>All Listings</h1>
+    <!-- <form method="get" action="/listing/new">
+        <button>Add Details</button>
+    </form> -->
+
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-xsm-1">
+        <% for( list of lists ) { %>
+            <a href="/listing/<%= list._id %>" class="listing-link">
+                <div class="card col listing-card">
+                    <img src="<%= list.image.url %>" class="card-img-top" style="height: 20rem; width: 20rem;" alt="Property Image" >
+                    <div class="card-body">
+                    <p class="card-text">
+                        <b><%= list.title %></b>
+                        <p>&#8377; <%= list.price.toLocaleString("en-IN") %> \night</p>
+                    </p>
+                    </div>
+                </div>
+            </a>
+        <% } %>
+    </div>
+
+
+
+    <!-- <ul>
+        <% for( list of lists ) { %>
+            <li><a href="/listing/<%= list._id %>" ><%= list.title %></a></li>
+        <% } %>
+    </ul> -->
+</body>
